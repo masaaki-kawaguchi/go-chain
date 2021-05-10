@@ -3,7 +3,7 @@
 ## サーバー起動
 
 ```shell
-go run server.go
+go run main.go
 ```
 
 ## チェーンの内容
@@ -36,3 +36,4 @@ go run server.go
 - [ ] Mysql保存
 - [ ] 公開鍵と秘密鍵のペア妥当性判定
 - [ ] 最長チェーン判定
+- [ ] テスト
