@@ -2,7 +2,7 @@
 
 ## サーバー起動
 
-```go
+```shell
 go run server.go
 ```
 

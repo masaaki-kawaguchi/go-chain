@@ -1,2 +1,4 @@
 .idea/
-test.http // IntelliJ用のリクエストテストファイル
+
+# intelliJ用のリクエストテストファイル
+test.http
