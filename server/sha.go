@@ -1,4 +1,4 @@
-package crypto
+package server
 
 import (
 	"crypto/sha256"
@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func main(frag string) {
+func Sha(frag string) {
 
 	if len(frag) <= 0 {
 		return
@@ -17,10 +17,5 @@ func main(frag string) {
 	// TODO: パラメーター取得による複雑化
 	result := sha256.Sum256([]byte(frag))
 
-	// TODO: judge4digitsでの判定で再帰化
 	fmt.Println(strings.ToUpper(hex.EncodeToString(result[:])))
-}
-
-func judge4digits(hash string){
-	// TODO: 上4桁が0000かどうかの判定
 }
