@@ -40,6 +40,6 @@ func main() {
 	// マイニング用
 	router.POST("/mining", server.Mining(BlockNumber))
 
-	Log.Fatal(router.Start(":1323"))
+	Log.Fatal(router.Start(":8080"))
 
 }
