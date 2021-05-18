@@ -1,8 +1,10 @@
 FROM golang:1.16
 
-ENV GO111MODULE=on
+#ENV GO111MODULE=on
 
-WORKDIR go/src/github.com/masaaki-kawaguchi/go-chain
+WORKDIR /go/src
+
+COPY ../../main.go /go/src/main.go
 
 COPY go.mod go.sum ./
 
@@ -13,8 +15,4 @@ RUN go build .
 
 RUN go get github.com/pilu/fresh
 
-RUN go run ./main.go
-
-EXPOSE 8080
-
-CMD ["fresh"]
+CMD ["go", "run", "main.go", "fresh"]
