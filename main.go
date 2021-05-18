@@ -1,8 +1,10 @@
 package main
 
 import (
+	"github.com/labstack/echo/v4"
 	Log "github.com/sirupsen/logrus"
 	"go-chain/server"
+	"net/http"
 )
 
 func init() {
@@ -32,10 +34,10 @@ func main() {
 
 	router := server.Init()
 
-	//router.GET("/", func(c echo.Context) error {
-	//	// 仮置き
-	//	return c.String(http.StatusOK, "Hello, World!")
-	//})
+	router.GET("/", func(c echo.Context) error {
+		// 仮置き
+		return c.String(http.StatusOK, "Hello, World!")
+	})
 
 	// マイニング用
 	router.POST("/mining", server.Mining(BlockNumber))
