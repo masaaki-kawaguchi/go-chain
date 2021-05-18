@@ -1,6 +1,8 @@
 CREATE DATABASE IF NOT EXISTS go_chain;
 USE go_chain;
 
+-- 以下、作っておきたい初期設定を書いておくとビルド時に作成されるらしい
+
 # CREATE TABLE IF NOT EXISTS users (
 #     id          INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 #     name        VARCHAR(256) NOT NULL,
