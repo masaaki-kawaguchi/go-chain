@@ -5,6 +5,10 @@
 ```shell
 go run main.go
 ```
+もしくは  
+```shell
+docker-compose up
+```
 
 ## チェーンの内容
   
