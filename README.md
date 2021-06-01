@@ -23,7 +23,8 @@ DomainModel層 : /domain/model
 上から下へ  
 
 参考　　
-![onion](https://user-images.githubusercontent.com/28241735/120328338-b0a8f080-c325-11eb-965b-4c355a03e983.jpeg)
+![onion](https://user-images.githubusercontent.com/28241735/120328338-b0a8f080-c325-11eb-965b-4c355a03e983.jpeg)  
+[https://qiita.com/nanamen/items/f37d1047368929e377fd](https://qiita.com/nanamen/items/f37d1047368929e377fd)
 
   
 

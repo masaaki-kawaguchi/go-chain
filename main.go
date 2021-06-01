@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/labstack/echo/v4"
 	Log "github.com/sirupsen/logrus"
-	"go-chain/server"
+	"go-chain/presenter/http/router"
 	"net/http"
 )
 
@@ -32,7 +32,7 @@ type Block struct {
 
 func main() {
 
-	router := server.Init()
+	router := router.Init()
 
 	router.GET("/", func(c echo.Context) error {
 		// 仮置き
@@ -40,7 +40,7 @@ func main() {
 	})
 
 	// マイニング用
-	router.POST("/mining", server.Mining(BlockNumber))
+	//router.POST("/mining", router.Mining(BlockNumber))
 
 	Log.Fatal(router.Start(":8080"))
 
