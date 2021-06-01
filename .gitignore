@@ -2,3 +2,7 @@
 
 # intelliJ用のリクエストテストファイル
 test.http
+
+
+*
+!.gitignore
