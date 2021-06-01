@@ -10,6 +10,23 @@ go run main.go
 docker-compose up
 ```
 
+## ディレクトリ構成とオニオンアーキテクチャの関係性
+
+```shell
+UI(Presentation)層 : /presenter
+Infrastructure層 : /infrastructure
+ApplicationService層 : /usecase
+DomainService層 : /domain/service, /domain/repository
+DomainModel層 : /domain/model
+```
+   
+上から下へ  
+
+参考　　
+![onion](https://user-images.githubusercontent.com/28241735/120328338-b0a8f080-c325-11eb-965b-4c355a03e983.jpeg)
+
+  
+
 ## チェーンの内容
   
 - ブロックナンバー  
