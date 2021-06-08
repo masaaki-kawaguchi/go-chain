@@ -22,7 +22,29 @@ DomainModel層 : /domain/model
    
 上から下へ  
 
-参考　　
+**UI(Presentation)層 : /presenter**  
+ユーザーからの入力を受け付け入力をサニタイジング、ApplicationService層に渡す役割を持つ  
+また、ApplicationService層からの出力を受け取り、外界とのやり取りに適した形式に変換を行う  
+  
+**Infrastructure層 : /infrastructure**  
+データの永続化,メッセージ送信などの技術的機能をここで定義  
+/domain/service/xxx_repository.goに記載するinterfaceの実装をここで行う  
+
+**ApplicationService層 : /usecase**    
+アプリケーション固有のロジックを定義し、処理順序やドメイン層とのデータの流れをここで管理  
+  
+**DomainService層 : /domain/service**  
+エンティティや値オブジェクトの責務ではないドメインモデルのロジックをここで管理  
+/domain/repositoryにはDIPのためのinterfaceを定義  
+  
+**DomainModel層 : /domain/model**  
+エンティティ、値オブジェクト、集約といった「ドメインオブジェクト」をここで管理  
+  
+**/interactor**  
+DIコンテナの役割  
+最終的な依存の解決はinteractorが行う  
+
+__参考__　　
 ![onion](https://user-images.githubusercontent.com/28241735/120328338-b0a8f080-c325-11eb-965b-4c355a03e983.jpeg)  
 [https://qiita.com/nanamen/items/f37d1047368929e377fd](https://qiita.com/nanamen/items/f37d1047368929e377fd)
 
