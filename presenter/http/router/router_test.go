@@ -8,9 +8,11 @@ import (
 )
 
 func TestRouter(t *testing.T) {
+
 	router := Init()
 
-	req := httptest.NewRequest("POST", "/maining", nil)
+// 	req := httptest.NewRequest("POST", "/maining", nil)
+	req := httptest.NewRequest("GET", "/", nil)
 	rec := httptest.NewRecorder()
 
 	router.ServeHTTP(rec, req)
