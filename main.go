@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/labstack/echo"
 	"github.com/labstack/echo/v4"
 	Log "github.com/sirupsen/logrus"
 	"go-chain/presenter/http/router"
@@ -11,6 +12,8 @@ func init() {
 	Log.SetLevel(Log.DebugLevel)
 	Log.SetFormatter(&Log.JSONFormatter{})
 }
+
+const helloMessage = "Hello, World!"
 
 var BlockNumber = 1
 
@@ -30,18 +33,26 @@ type Block struct {
 	Transaction
 }
 
-func main() {
+func main() *echo.Echo {
 
 	router := router.Init()
 
-	router.GET("/", func(c echo.Context) error {
-		// 仮置き
-		return c.String(http.StatusOK, "Hello, World!")
-	})
+	//router.GET("/", func(c echo.Context) error {
+	//	// 仮置き
+	//	return c.String(http.StatusOK, "Hello, World!")
+	//})
+	//Log.Fatal(router.Start(":8080"))
 
+	router.GET("/", helloHandler)
+
+	return router
 	// マイニング用
 	//router.POST("/mining", router.Mining(BlockNumber))
 
-	Log.Fatal(router.Start(":8080"))
+	//Log.Fatal(router.Start(":8080"))
 
+}
+
+func helloHandler(c echo.Context) error {
+	return c.String(http.StatusOK, helloMessage)
 }
